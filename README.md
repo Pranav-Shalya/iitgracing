@@ -17,11 +17,11 @@ Modern Tech Stack: React frontend with Node.js backend
 
 Platform	URL	Status
 
-Production	iitgracing.vercel.app	✅ Live 
+Production : iitgracing.vercel.app	
 ​
-Render	iitgracing.onrender.com	✅ Live
+Render: iitgracing.onrender.com	
 
-Preview	iitgracing-2evj7u1yt-pranav-shalyas-projects.vercel.app	🔄 Preview
+Preview	: iitgracing-2evj7u1yt-pranav-shalyas-projects.vercel.app	
 
 **🛠 Tech Stack**
 
