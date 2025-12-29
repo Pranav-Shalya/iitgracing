@@ -1,79 +1,226 @@
-**IITG Racing 🚀**
+Here’s an updated, colorful README.md that matches your backend/frontend structure, models, pages, seed scripts, and deployments.
 
-IITG Racing is a dynamic web application celebrating the IIT Guwahati Racing team's legacy in Formula Student competitions like Formula Bharat, SUPRA SAE, and EffiCycle. Built with modern full-stack technologies, it showcases team achievements, events, and automotive innovation.
-​
+🏎️ IITG Racing Web App
+A full-stack MERN application for managing and showcasing IIT Guwahati Racing’s cars, teams, sponsors, competitions, and events.
+It includes a secure admin panel for CRUD operations and a public-facing site for visitors.
 
-**✨ Features**
+🌟 Core Features
+Public Website
 
-Responsive Design: Mobile-first layout optimized for all devices
+View current and past teams, cars, sponsors, events, and competitions.
 
-Dynamic Content: Admin-managed sections for teams, sponsors, and events
+Dedicated detail pages for each car, team, and event.
 
-Live Deployments: Hosted on Render and Vercel for global access
+Admin Dashboard
 
-Modern Tech Stack: React frontend with Node.js backend
+Login-protected admin area.
 
-**🚀 Live Demos**
+Add / edit / delete:
 
-Platform	URL	Status
+Teams, cars, sponsors, competitions, events.
 
-Production : iitgracing.vercel.app	
-​
-Render: iitgracing.onrender.com	
+Image uploads handled on the backend.
 
-Preview	: iitgracing-2evj7u1yt-pranav-shalyas-projects.vercel.app	
+Data Seeding
 
-**🛠 Tech Stack**
+Seed scripts for:
 
-graph TD
-    A[React Frontend] --> B[Node.js/Express Backend]
-    B --> C[MongoDB]
-    C --> D[Vercel/Render]
-    A -->|Responsive UI| E[Tailwind CSS]
-Frontend: React, Tailwind CSS
+Admin user
 
-Backend: Node.js, Express.js
+Cars, teams (including 2025), sponsors, events, competitions.
 
-Database: MongoDB
+Responsive UI
 
-Deployment: Vercel, Render
+Built with React components, protected routes, and a global auth context.
 
-**📦 Quick Setup**
+📁 Project Structure
+🧠 Backend (/backend)
+server.js – Express server entry point.
 
-Clone the repository: git clone https://github.com/Pranav-Shalya/iitgracing.git
+models/
 
-Backend: cd backend && npm install && npm run dev
+Car.js, Team.js, Sponsor.js, Competition.js, Event.js, User.js
 
-Frontend: cd frontend && npm install && npm start
+routes/
 
-Access admin panel at /admin for content management
+auth.js – Login / auth routes.
 
-Note: Separate frontend/backend folders - run both servers simultaneously.
+cars.js, teams.js, sponsors.js, competitions.js, events.js, public.js
 
-**🎨 Customization**
+middleware/
 
-The site uses a vibrant racing theme with:
+auth.js – JWT/authorization middleware.
 
-🟥 Red accents for speed
+scripts/
 
-⚫ Black backgrounds for focus
+seedAdmin.js
 
-🟨 Gold highlights for achievements
+seedCars.js
 
-Modify colors in tailwind.config.js or CSS variables.
+seedTeam2025.js
 
-**🤝 Contributing**
+seedOldTeams.js
 
-Welcome contributions! Fork, create a feature branch, and submit a PR.
+seedSponsors.js
 
-git checkout -b feature/amazing-feature
+seedCapablEvents.js / other event/competition seeding scripts
 
-git commit -m 'Add amazing feature'
+seedFromConfig.js
 
-git push origin feature/amazing-feature
+uploads/
 
-**📄 License**
+Folder for uploaded images/files.
 
-MIT License - feel free to use and modify!
+test-models.js, seed.js – utilities for testing and seeding.
 
-⭐ Built with passion for IITG Racing ⭐
+🎨 Frontend (/frontend or /src)
+src/components/
+
+Navbar.js
+
+ProtectedRoute.js
+
+src/context/
+
+AuthContext.js – authentication and user state.
+
+src/pages/
+
+Admin pages
+AdminCars.js, AdminTeams.js, AdminSponsors.js, AdminEvents.js, AdminCompetitions.js
+
+Public pages
+PublicCars.js, PublicTeam.js, PublicSponsors.jsx, PublicEvents.js, PublicCompetitions.js, CarDetail.js, CarEdit.js
+
+Login.js – admin login page.
+
+src/assets/footer/ – footer assets.
+
+Root files: App.js, App.css, index.js, index.css, logo.svg, postcss.config.js, .env, seed.js, server.js (if using CRA + custom dev proxy).
+
+⚙️ Installation & Local Setup
+1️⃣ Clone the repo
+bash
+git clone https://github.com/Pranav-Shalya/iitgracing.git
+cd iitgracing
+2️⃣ Backend setup
+bash
+cd backend
+npm install
+Create a .env file:
+
+text
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+CLIENT_URL=http://localhost:3000
+UPLOAD_DIR=uploads
+Run the backend:
+
+bash
+npm run dev
+# or
+npm start
+3️⃣ Seed initial data
+From the backend folder:
+
+bash
+node scripts/seedAdmin.js
+node scripts/seedCars.js
+node scripts/seedTeam2025.js
+node scripts/seedOldTeams.js
+node scripts/seedSponsors.js
+node scripts/seedCapablEvents.js
+# add other scripts as needed
+4️⃣ Frontend setup
+bash
+cd ../frontend
+npm install
+npm start
+By default:
+
+Frontend runs on http://localhost:3000
+
+Backend runs on http://localhost:5000
+
+Configure proxy in frontend/package.json if needed:
+
+json
+"proxy": "http://localhost:5000"
+🔐 Admin Panel
+Visit /login to sign in as admin.
+
+After login, access pages like:
+
+/admin/cars
+
+/admin/teams
+
+/admin/sponsors
+
+/admin/events
+
+/admin/competitions
+
+ProtectedRoute.js + AuthContext.js ensure only authenticated users can access admin routes.
+
+🌍 Deployment
+✅ Frontend
+Deployed on Vercel
+Live domain: https://iitgracing.vercel.app/
+Project: iitgracing on your Vercel account.
+
+Typical frontend env variables (on Vercel):
+
+text
+REACT_APP_API_BASE_URL=https://your-backend-domain.com
+✅ Backend
+Deployed on Render
+Live backend: https://iitgracing.onrender.com/ (example)
+
+Typical Render environment variables:
+
+text
+PORT=10000        # or provided by Render
+MONGODB_URI=your_production_mongodb_uri
+JWT_SECRET=your_strong_secret
+CLIENT_URL=https://iitgracing.vercel.app
+UPLOAD_DIR=uploads
+🔗 End-to-end flow
+Frontend (Vercel) sends API requests to Render backend.
+
+Backend serves:
+
+Public routes (for site content).
+
+Protected admin routes (CRUD).
+
+Static uploads from /uploads.
+
+🎯 Scripts
+Backend package.json (example)
+json
+"scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js",
+  "seed": "node seed.js",
+  "test-models": "node test-models.js"
+}
+Frontend package.json (example)
+json
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+}
+💡 Future Improvements
+Role-based permissions (multiple admin roles).
+
+Analytics dashboard for events and sponsors.
+
+Image optimization & CDN.
+
+Automated seeding from external config/Instagram.
+
+🏁 Built with speed, precision and a lot of racing spirit.
