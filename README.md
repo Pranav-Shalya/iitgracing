@@ -34,73 +34,126 @@ Cars, teams (including 2025), sponsors, events, competitions.
 
 Built with React components, protected routes, and a global auth context.
 
-**📁 Project Structure**
+graph TD
+    iitgracing[iitgracing/]
+    
+    %% Backend
+    backend[🧠 backend/]
+    server[server.js<br/>Express server]
+    models[models/]
+    car[Car.js]
+    team[Team.js]
+    sponsor[Sponsor.js]
+    comp[Competition.js]
+    event[Event.js]
+    user[User.js]
+    routes[routes/]
+    auth_rt[auth.js<br/>Login/Auth]
+    cars_rt[cars.js]
+    teams_rt[teams.js]
+    spons_rt[sponsors.js]
+    events_rt[events.js]
+    public_rt[public.js]
+    middleware[middleware/]
+    auth_mw[auth.js<br/>JWT middleware]
+    scripts[scripts/]
+    seedAdmin[seedAdmin.js]
+    seedCars[seedCars.js]
+    seedTeam25[seedTeam2025.js]
+    seedOld[seedOldTeams.js]
+    seedSpons[seedSponsors.js]
+    seedEvents[seedCapablEvents.js<br/>+ others]
+    seedConfig[seedFromConfig.js]
+    uploads[uploads/<br/>Image storage]
+    utils[test-models.js<br/>seed.js]
+    
+    %% Frontend
+    frontend[🎨 frontend/]
+    src[src/]
+    components[components/]
+    navbar[Navbar.js]
+    protected[ProtectedRoute.js]
+    context[context/]
+    auth_ctx[AuthContext.js]
+    pages[pages/]
+    admin_pages[Admin pages]
+    adminCars[AdminCars.js]
+    adminTeams[AdminTeams.js]
+    adminSpons[AdminSponsors.js]
+    adminEvents[AdminEvents.js]
+    adminComp[AdminCompetitions.js]
+    public_pages[Public pages]
+    publicCars[PublicCars.js]
+    publicTeam[PublicTeam.js]
+    publicSpons[PublicSponsors.jsx]
+    publicEvents[PublicEvents.js]
+    publicComp[PublicCompetitions.js]
+    carDetail[CarDetail.js]
+    carEdit[CarEdit.js]
+    login[Login.js]
+    assets[assets/footer/]
+    root_files[Root files<br/>App.js, index.js,<br/>logo.svg, .env]
+    
+    %% Connections
+    iitgracing --> backend
+    iitgracing --> frontend
+    
+    backend --> server
+    backend --> models --> car
+    models --> team
+    models --> sponsor
+    models --> comp
+    models --> event
+    models --> user
+    
+    backend --> routes --> auth_rt
+    routes --> cars_rt
+    routes --> teams_rt
+    routes --> spons_rt
+    routes --> events_rt
+    routes --> public_rt
+    
+    backend --> middleware --> auth_mw
+    backend --> scripts --> seedAdmin
+    scripts --> seedCars
+    scripts --> seedTeam25
+    scripts --> seedOld
+    scripts --> seedSpons
+    scripts --> seedEvents
+    scripts --> seedConfig
+    backend --> uploads
+    backend --> utils
+    
+    frontend --> src
+    src --> components --> navbar
+    components --> protected
+    src --> context --> auth_ctx
+    src --> pages --> admin_pages --> adminCars
+    admin_pages --> adminTeams
+    admin_pages --> adminSpons
+    admin_pages --> adminEvents
+    admin_pages --> adminComp
+    pages --> public_pages --> publicCars
+    public_pages --> publicTeam
+    public_pages --> publicSpons
+    public_pages --> publicEvents
+    public_pages --> publicComp
+    pages --> carDetail
+    pages --> carEdit
+    pages --> login
+    src --> assets
+    frontend --> root_files
+    
+    classDef backendStyle fill:#1f2937,stroke:#dc2626,stroke-width:3px,color:#fff
+    classDef frontendStyle fill:#3b82f6,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef modelStyle fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff
+    classDef routeStyle fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff
+    
+    class backend,server,models,routes,middleware,scripts,uploads,utils backendStyle
+    class car,team,sponsor,comp,event,user modelStyle
+    class auth_rt,cars_rt,teams_rt,spons_rt,events_rt,public_rt routeStyle
+    class frontend,src,components,context,pages,admin_pages,public_pages,assets,root_files frontendStyle
 
-**🧠 Backend (/backend)**
-
-server.js – Express server entry point.
-
-models/
-
-Car.js, Team.js, Sponsor.js, Competition.js, Event.js, User.js
-
-routes/
-
-auth.js – Login / auth routes.
-
-cars.js, teams.js, sponsors.js, competitions.js, events.js, public.js
-
-middleware/
-
-auth.js – JWT/authorization middleware.
-
-scripts/
-
-seedAdmin.js
-
-seedCars.js
-
-seedTeam2025.js
-
-seedOldTeams.js
-
-seedSponsors.js
-
-seedCapablEvents.js / other event/competition seeding scripts
-
-seedFromConfig.js
-
-uploads/
-
-Folder for uploaded images/files.
-
-test-models.js, seed.js – utilities for testing and seeding.
-
-**🎨 Frontend (/frontend or /src)**
-
-src/components/
-
-Navbar.js
-
-ProtectedRoute.js
-
-src/context/
-
-AuthContext.js – authentication and user state.
-
-src/pages/
-
-Admin pages
-AdminCars.js, AdminTeams.js, AdminSponsors.js, AdminEvents.js, AdminCompetitions.js
-
-Public pages
-PublicCars.js, PublicTeam.js, PublicSponsors.jsx, PublicEvents.js, PublicCompetitions.js, CarDetail.js, CarEdit.js
-
-Login.js – admin login page.
-
-src/assets/footer/ – footer assets.
-
-Root files: App.js, App.css, index.js, index.css, logo.svg, postcss.config.js, .env, seed.js, server.js (if using CRA + custom dev proxy).
 
 **⚙️ Installation & Local Setup**
 
