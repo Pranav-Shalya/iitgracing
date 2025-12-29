@@ -4,7 +4,7 @@ const PublicCompetitions = () => {
   const [comps, setComps] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/public/competitions')
+    fetch('https://iitgracing.onrender.com/api/public/competitions')
       .then(res => res.json())
       .then(data => {
         const sorted = data.sort((a, b) => b.year - a.year);

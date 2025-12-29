@@ -9,7 +9,7 @@ const PublicCars = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/public/cars/grouped')
+    fetch('https://iitgracing.onrender.com/api/public/cars/grouped')
       .then(res => res.json())
       .then(data => {
         setGroupedCars(data);

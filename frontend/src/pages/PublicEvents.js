@@ -4,7 +4,7 @@ const PublicEvents = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/public/events')
+    fetch('https://iitgracing.onrender.com/api/public/events')
       .then(res => res.json())
       .then(data => {
         const sorted = data.sort(

@@ -179,7 +179,7 @@ const PublicTeam = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/public/teams')
+    fetch('https://iitgracing.onrender.com/api/public/teams')
       .then(res => res.json())
       .then(data => {
         const sorted = data.sort((a, b) => b.year - a.year);

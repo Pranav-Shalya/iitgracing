@@ -332,7 +332,7 @@ const Home = () => {
   const [showMediaSide, setShowMediaSide] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/public/home')
+    fetch('https://iitgracing.onrender.com/api/public/home')
       .then(res => res.json())
       .then(json => {
         setData(json);
@@ -592,9 +592,9 @@ const AdminDashboard = () => {
     const fetchStats = async () => {
       try {
         const [carsRes, teamsRes, eventsRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/public/cars'),
-          axios.get('http://localhost:5000/api/public/teams'),
-          axios.get('http://localhost:5000/api/public/events')
+          axios.get('https://iitgracing.onrender.com/api/public/cars'),
+          axios.get('https://iitgracing.onrender.com/api/public/teams'),
+          axios.get('https://iitgracing.onrender.com/api/public/events')
         ]);
         setStats({
           cars: carsRes.data.length,

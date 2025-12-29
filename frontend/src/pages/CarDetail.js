@@ -8,7 +8,7 @@ const CarDetail = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/public/cars/${slug}`)
+    fetch(`https://iitgracing.onrender.com/api/public/cars/${slug}`)
       .then(res => res.json())
       .then(data => {
         if (data.error) throw new Error(data.message);

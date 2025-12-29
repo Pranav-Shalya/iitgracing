@@ -23,7 +23,7 @@ const CarsEdit = () => {
     }
     
     // STEP 1: Get ALL cars (SAME as AdminCars)
-    fetch('http://localhost:5000/api/public/cars')
+    fetch('https://iitgracing.onrender.com/api/public/cars')
       .then(res => {
         if (!res.ok) throw new Error('Failed to load cars');
         return res.json();

@@ -6,7 +6,7 @@ const PublicSponsors = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/public/sponsors')
+    fetch('https://iitgracing.onrender.com/api/public/sponsors')
       .then(res => res.json())
       .then(data => {
         setSponsors(Array.isArray(data) ? data : []);
