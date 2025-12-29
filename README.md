@@ -1,17 +1,18 @@
-Here’s an updated, colorful README.md that matches your backend/frontend structure, models, pages, seed scripts, and deployments.
 
-🏎️ IITG Racing Web App
+**🏎️ IITG Racing Web App**
+
 A full-stack MERN application for managing and showcasing IIT Guwahati Racing’s cars, teams, sponsors, competitions, and events.
 It includes a secure admin panel for CRUD operations and a public-facing site for visitors.
 
-🌟 Core Features
-Public Website
+**🌟 Core Features**
+
+**Public Website**
 
 View current and past teams, cars, sponsors, events, and competitions.
 
 Dedicated detail pages for each car, team, and event.
 
-Admin Dashboard
+**Admin Dashboard**
 
 Login-protected admin area.
 
@@ -21,7 +22,7 @@ Teams, cars, sponsors, competitions, events.
 
 Image uploads handled on the backend.
 
-Data Seeding
+**Data Seeding**
 
 Seed scripts for:
 
@@ -29,12 +30,14 @@ Admin user
 
 Cars, teams (including 2025), sponsors, events, competitions.
 
-Responsive UI
+**Responsive UI**
 
 Built with React components, protected routes, and a global auth context.
 
-📁 Project Structure
-🧠 Backend (/backend)
+**📁 Project Structure**
+
+**🧠 Backend (/backend)**
+
 server.js – Express server entry point.
 
 models/
@@ -73,7 +76,8 @@ Folder for uploaded images/files.
 
 test-models.js, seed.js – utilities for testing and seeding.
 
-🎨 Frontend (/frontend or /src)
+**🎨 Frontend (/frontend or /src)**
+
 src/components/
 
 Navbar.js
@@ -98,45 +102,67 @@ src/assets/footer/ – footer assets.
 
 Root files: App.js, App.css, index.js, index.css, logo.svg, postcss.config.js, .env, seed.js, server.js (if using CRA + custom dev proxy).
 
-⚙️ Installation & Local Setup
+**⚙️ Installation & Local Setup**
+
 1️⃣ Clone the repo
-bash
+
 git clone https://github.com/Pranav-Shalya/iitgracing.git
+
 cd iitgracing
+
 2️⃣ Backend setup
-bash
+
+
 cd backend
+
 npm install
+
 Create a .env file:
 
-text
 PORT=5000
+
 MONGODB_URI=your_mongodb_connection_string
+
 JWT_SECRET=your_jwt_secret
+
 CLIENT_URL=http://localhost:3000
+
 UPLOAD_DIR=uploads
+
 Run the backend:
 
-bash
 npm run dev
-# or
+
+#or
+
 npm start
-3️⃣ Seed initial data
+
+**3️⃣ Seed initial data**
+
 From the backend folder:
 
-bash
+
 node scripts/seedAdmin.js
+
 node scripts/seedCars.js
+
 node scripts/seedTeam2025.js
+
 node scripts/seedOldTeams.js
+
 node scripts/seedSponsors.js
+
 node scripts/seedCapablEvents.js
+
 # add other scripts as needed
-4️⃣ Frontend setup
-bash
+**4️⃣ Frontend setup**
+
 cd ../frontend
+
 npm install
+
 npm start
+
 By default:
 
 Frontend runs on http://localhost:3000
@@ -148,6 +174,7 @@ Configure proxy in frontend/package.json if needed:
 json
 "proxy": "http://localhost:5000"
 🔐 Admin Panel
+
 Visit /login to sign in as admin.
 
 After login, access pages like:
@@ -164,28 +191,39 @@ After login, access pages like:
 
 ProtectedRoute.js + AuthContext.js ensure only authenticated users can access admin routes.
 
-🌍 Deployment
-✅ Frontend
+
+**🌍 Deployment**
+
+**✅ Frontend**
+
 Deployed on Vercel
+
 Live domain: https://iitgracing.vercel.app/
+
 Project: iitgracing on your Vercel account.
 
 Typical frontend env variables (on Vercel):
 
-text
 REACT_APP_API_BASE_URL=https://your-backend-domain.com
-✅ Backend
+
+**✅ Backend**
+
 Deployed on Render
-Live backend: https://iitgracing.onrender.com/ (example)
+
+Live backend: https://iitgracing.onrender.com/ 
 
 Typical Render environment variables:
 
-text
 PORT=10000        # or provided by Render
+
 MONGODB_URI=your_production_mongodb_uri
+
 JWT_SECRET=your_strong_secret
+
 CLIENT_URL=https://iitgracing.vercel.app
+
 UPLOAD_DIR=uploads
+
 🔗 End-to-end flow
 Frontend (Vercel) sends API requests to Render backend.
 
@@ -198,6 +236,7 @@ Protected admin routes (CRUD).
 Static uploads from /uploads.
 
 🎯 Scripts
+
 Backend package.json (example)
 json
 "scripts": {
@@ -206,6 +245,7 @@ json
   "seed": "node seed.js",
   "test-models": "node test-models.js"
 }
+
 Frontend package.json (example)
 json
 "scripts": {
@@ -214,7 +254,8 @@ json
   "test": "react-scripts test",
   "eject": "react-scripts eject"
 }
-💡 Future Improvements
+
+**💡 Future Improvements**
 Role-based permissions (multiple admin roles).
 
 Analytics dashboard for events and sponsors.
