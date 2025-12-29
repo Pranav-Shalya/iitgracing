@@ -3,7 +3,7 @@
 IITG Racing is a dynamic web application celebrating the IIT Guwahati Racing team's legacy in Formula Student competitions like Formula Bharat, SUPRA SAE, and EffiCycle. Built with modern full-stack technologies, it showcases team achievements, events, and automotive innovation.
 ​
 
-**✨ Features******
+**✨ Features**
 
 Responsive Design: Mobile-first layout optimized for all devices
 
@@ -16,6 +16,7 @@ Modern Tech Stack: React frontend with Node.js backend
 **🚀 Live Demos**
 
 Platform	URL	Status
+
 Production	iitgracing.vercel.app	✅ Live 
 ​
 Render	iitgracing.onrender.com	✅ Live
@@ -66,7 +67,9 @@ Modify colors in tailwind.config.js or CSS variables.
 Welcome contributions! Fork, create a feature branch, and submit a PR.
 
 git checkout -b feature/amazing-feature
+
 git commit -m 'Add amazing feature'
+
 git push origin feature/amazing-feature
 
 **📄 License**
